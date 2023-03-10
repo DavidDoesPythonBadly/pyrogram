@@ -38,7 +38,7 @@ if len(argv) > 1 and argv[1] in ["bdist_wheel", "install", "develop"]:
     errors_compiler.start()
 
 setup(
-    name="Pyrogram",
+    name="Pyrogrampatched",
     version=version,
     description="Elegant, modern and asynchronous Telegram MTProto API framework in Python for users and bots",
     long_description=readme,
@@ -69,7 +69,7 @@ setup(
         "Topic :: Communications :: Chat",
         "Topic :: Software Development :: Libraries",
         "Topic :: Software Development :: Libraries :: Python Modules",
-        "Topic :: Software Development :: Libraries :: Application Frameworks"
+        "Topic :: Software Development :: Libraries :: Application Frameworks",
     ],
     keywords="telegram chat messenger mtproto api client library python",
     project_urls={
@@ -84,5 +84,5 @@ setup(
     },
     packages=find_packages(exclude=["compiler*", "tests*"]),
     zip_safe=False,
-    install_requires=requires
+    install_requires=requires,
 )
