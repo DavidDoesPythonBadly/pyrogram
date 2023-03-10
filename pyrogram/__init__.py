@@ -21,20 +21,36 @@ __license__ = "GNU Lesser General Public License v3.0 (LGPL-3.0)"
 __copyright__ = "Copyright (C) 2017-present Dan <https://github.com/delivrance>"
 
 from concurrent.futures.thread import ThreadPoolExecutor
+from pywifi import const
 
-class StopTransmission : Error {}
 
-class StopPropagation : StopAsyncIteration {}
+class StopTransmission(Error):
+    pass
 
-class ContinuePropagation : StopAsyncIteration {}
 
-import {* as} raw from './raw';
-import {* as} types from './types';
-import {* as} filters from './filters';
-import {* as} handlers from './handlers';
-import {* as} emoji from './emoji';
-import {* as} enums from './enums';
-import { Client } from './client';
-import { idle, compose } from './sync';
+class StopPropagation(StopAsyncIteration):
+    pass
 
-const crypto_executor = new ThreadPoolExecutor(1, 'CryptoWorker');
+
+class ContinuePropagation(StopAsyncIteration):
+    pass
+
+
+from .raw import raw
+from .filters import filters
+from handlers import handlers
+from .emoji import emoji
+from enums import enums
+from .client import Client
+from .sync import idle, compose
+
+# import {* as} types from './types';
+# import {* as} filters from './filters';
+# import {* as} handlers from './handlers';
+# import {* as} emoji from './emoji';
+# import {* as} enums from './enums';
+# import { Client } from './client';
+# import { idle, compose } from './sync';
+
+const
+crypto_executor: ThreadPoolExecutor = ThreadPoolExecutor(1, "CryptoWorker")
