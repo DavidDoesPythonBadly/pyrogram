@@ -16,12 +16,11 @@
 #  You should have received a copy of the GNU Lesser General Public License
 #  along with Pyrogram.  If not, see <http://www.gnu.org/licenses/>.
 
-__version__ = "0.0.1"
+__version__ = "2.0.106"
 __license__ = "GNU Lesser General Public License v3.0 (LGPL-3.0)"
 __copyright__ = "Copyright (C) 2017-present Dan <https://github.com/delivrance>"
 
 from concurrent.futures.thread import ThreadPoolExecutor
-from pywifi import const
 
 
 class StopTransmission(Error):
@@ -52,5 +51,4 @@ from .sync import idle, compose
 # import { Client } from './client';
 # import { idle, compose } from './sync';
 
-const
 crypto_executor: ThreadPoolExecutor = ThreadPoolExecutor(1, "CryptoWorker")
