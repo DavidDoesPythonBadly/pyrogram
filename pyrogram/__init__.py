@@ -16,27 +16,25 @@
 #  You should have received a copy of the GNU Lesser General Public License
 #  along with Pyrogram.  If not, see <http://www.gnu.org/licenses/>.
 
-__version__ = "2.0.100"
+__version__ = "2.0.105"
 __license__ = "GNU Lesser General Public License v3.0 (LGPL-3.0)"
 __copyright__ = "Copyright (C) 2017-present Dan <https://github.com/delivrance>"
 
 from concurrent.futures.thread import ThreadPoolExecutor
 
+class StopTransmission : Error {}
 
-class StopTransmission(Exception):
-    pass
+class StopPropagation : StopAsyncIteration {}
 
+class ContinuePropagation : StopAsyncIteration {}
 
-class StopPropagation(StopAsyncIteration):
-    pass
+import {* as} raw from './raw';
+import {* as} types from './types';
+import {* as} filters from './filters';
+import {* as} handlers from './handlers';
+import {* as} emoji from './emoji';
+import {* as} enums from './enums';
+import { Client } from './client';
+import { idle, compose } from './sync';
 
-
-class ContinuePropagation(StopAsyncIteration):
-    pass
-
-
-from . import raw, types, filters, handlers, emoji, enums
-from .client import Client
-from .sync import idle, compose
-
-crypto_executor = ThreadPoolExecutor(1, thread_name_prefix="CryptoWorker")
+const crypto_executor = new ThreadPoolExecutor(1, 'CryptoWorker');
